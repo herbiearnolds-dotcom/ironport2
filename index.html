@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ironport Networks</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #05070f;
+    color: white;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.8);
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.logo img {
+    height: 40px;
+    display: block;
+}
+
+nav a {
+    color: #ccc;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #00d4ff;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #0d1b3d, #05070f);
+    text-align: center;
+    padding: 20px;
+}
+
+.hero img,
+.hero-logo {
+    width: 280px;
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.partners {
+    text-align: center;
+}
+
+.partners img {
+    height: 50px;
+    margin: 10px;
+    padding: 10px 16px;
+    background: #fff;
+    border-radius: 6px;
+    vertical-align: middle;
+}
+
+input, textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    margin-top: 10px;
+    padding: 12px;
+    background: #00d4ff;
+    border: none;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="#" class="logo"><img src="ironport.png" alt="Ironport Networks"></a>
+    <nav>
+        <a href="#services">Professional Services</a>
+        <a href="#partners">Partners</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <img src="ironport.png" alt="Ironport Networks Logo" class="hero-logo">
+    <h1>Network Automation Solutions</h1>
+    <p>Automating Networks. Securing Futures.</p>
+</section>
+
+<section class="section" id="services">
+    <h2>Professional Services</h2>
+    <div class="grid">
+        <div class="card">Network Automation</div>
+        <div class="card">Cybersecurity</div>
+        <div class="card">Cloud Solutions</div>
+    </div>
+</section>
+
+<section class="section partners" id="partners">
+    <h2>Partners</h2>
+    <img src="aws.svg" alt="AWS">
+    <img src="innorix.svg" alt="Innorix">
+</section>
+
+<section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>+254-725-555575</p>
+    <p>support@ironport.co.ke</p>
+
+    <input placeholder="Name">
+    <input placeholder="Email">
+    <textarea placeholder="Message"></textarea>
+    <button>Send</button>
+</section>
+
+<a class="whatsapp" href="https://wa.me/254725555575">💬</a>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
+            sec.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
